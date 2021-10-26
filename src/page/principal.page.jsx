@@ -1,7 +1,7 @@
 import '../App.css';
 import React from 'react'
 import A4Sheet from '../component/A4-sheet.component';
-import { useSelector, useDispatch } from 'react-redux'
+import {useSelector} from 'react-redux'
 import UploadImage from '../component/upload-image';
 
 const PrincipalPage = (props) => {

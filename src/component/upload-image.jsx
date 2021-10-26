@@ -1,5 +1,5 @@
 import '../App.css';
-import { useSelector, useDispatch } from 'react-redux'
+import {useDispatch } from 'react-redux'
 import {newImageUploaded} from '../redux/actions'
 
 const UploadImage = (props) => {
