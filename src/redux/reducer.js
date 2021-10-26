@@ -3,7 +3,10 @@ import {types} from './types'
 const initialState = {
     state: {
         image: null,
-        status: null
+        status: null,
+        originalHeight: null,
+        originalWidth: null,
+        orientation: 'vertical'
     }
 };
 
@@ -14,7 +17,10 @@ export const imageProcessorReducer = (state = initialState, action) => {
             return {
                 state: {
                     image: action.state.image,
-                    status: action.state.status
+                    status: action.state.status,
+                    originalHeight: action.state.originalHeight,
+                    originalWidth: action.state.originalWidth,
+                    orientation: action.state.orientation
                 },
             };
         default:

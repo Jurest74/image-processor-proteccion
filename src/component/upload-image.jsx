@@ -12,14 +12,21 @@ const UploadImage = (props) => {
             const src = URL.createObjectURL(event.target.files[0]);
 
             img.onload = () => {
-            //const { height, width } = img;
-            img.src = src;
+            const { height, width } = img;
+            let orientation = getOrientation(height, width);
+            dispatch(newImageUploaded(src, 'loaded', height, width, orientation));
             };
 
-            //this.setState({srcImage: src, status: 'loaded'});
             img.src = src;
+            //this.setState({srcImage: src, status: 'loaded'});
+        }
+    }
 
-            dispatch(newImageUploaded(src, 'loaded'));
+    const getOrientation = (height, width) => {
+        if(width > height){
+            return 'horizontal'
+        }else{
+            return 'vertical'
         }
     }
 
