@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.A4-sheet {
+  background-color: white;
+  height: 1123px;
+  width: 796px;
+  display: inline-block;
+  margin: 3%;
+}
+
+
+.full-window {
+  position: absolute;
+  padding: 3%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color: #92918F;
+}
