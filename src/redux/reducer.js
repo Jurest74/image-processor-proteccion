@@ -6,7 +6,8 @@ const initialState = {
         status: null,
         originalHeight: null,
         originalWidth: null,
-        orientation: 'vertical'
+        orientation: 'vertical',
+        ratio: 0
     }
 };
 
@@ -20,7 +21,8 @@ export const imageProcessorReducer = (state = initialState, action) => {
                     status: action.state.status,
                     originalHeight: action.state.originalHeight,
                     originalWidth: action.state.originalWidth,
-                    orientation: action.state.orientation
+                    orientation: action.state.orientation,
+                    ratio: action.state.ratio
                 },
             };
         default:

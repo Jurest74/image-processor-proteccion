@@ -4,6 +4,11 @@ import {useEffect, useState} from 'react'
 
 const A4Sheet = (props) => {
 
+    let {AdjustImage} = props;
+
+    let imageStyle = {
+        position: 'absolute', left: "5%", top: "30%"
+    }
 
     const [current, setCurrent] = useState({state: {
     backgroundColor: "white",
@@ -13,6 +18,51 @@ const A4Sheet = (props) => {
     margin: "3%"}});
 
     const store = useSelector(store => store);
+        console.log("store", store);
+
+    if(AdjustImage && store.state.status === 'loaded'){
+        console.log("ajustar");
+
+        if(store.state.originalHeight > 1123 || store.state.originalWidth > 796){
+            if(store.state.orientation === 'vertical'){
+                console.log("vertical", (store.state.originalHeight / store.state.originalWidth) * 796);
+                imageStyle = {
+                    maxHeight: "1123px",
+                    MaxWidth: "796px",
+                    height: (store.state.originalHeight / store.state.originalWidth) * 796,
+                    margin: 0,
+                    padding: 0,
+                    float: "left"
+                };
+            }else{
+                console.log("horizontal", (store.state.originalHeight / store.state.originalWidth) * 1123);
+                let newHeight = (store.state.originalHeight / store.state.originalWidth) * 1123;
+                if(newHeight > 796){
+                    console.log("es mayor");
+                    imageStyle = {
+                        width: (796 * store.state.originalWidth) / store.state.originalHeight,
+                        margin: 0,
+                        padding: 0,
+                        float: "left"
+                    };
+                }else{
+                    imageStyle = {
+                        height: (store.state.originalHeight / store.state.originalWidth) * 1123,
+                        margin: 0,
+                        padding: 0,
+                        float: "left"
+                    };
+                }
+            }
+
+        }else{
+            imageStyle = {
+                margin: 0,
+                padding: 0,
+                float: "left"
+            };
+        }
+    }
 
     useEffect(() => {
         let A4Style = {
@@ -36,7 +86,7 @@ const A4Sheet = (props) => {
 
     return (
         <div style={current.state}>
-                <img style={{position: 'absolute', left: "5%", top: "30%"}} src={store.state.image} className="rounded" alt="" />
+                <img style={imageStyle} src={store.state.image} className="rounded" alt="" />
         </div>
     )
 }
