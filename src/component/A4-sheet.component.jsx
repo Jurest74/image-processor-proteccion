@@ -18,14 +18,11 @@ const A4Sheet = (props) => {
     margin: "3%"}});
 
     const store = useSelector(store => store);
-        console.log("store", store);
 
     if(AdjustImage && store.state.status === 'loaded'){
-        console.log("ajustar");
 
         if(store.state.originalHeight > 1123 || store.state.originalWidth > 796){
             if(store.state.orientation === 'vertical'){
-                console.log("vertical", (store.state.originalHeight / store.state.originalWidth) * 796);
                 imageStyle = {
                     maxHeight: "1123px",
                     MaxWidth: "796px",
@@ -35,10 +32,8 @@ const A4Sheet = (props) => {
                     float: "left"
                 };
             }else{
-                console.log("horizontal", (store.state.originalHeight / store.state.originalWidth) * 1123);
                 let newHeight = (store.state.originalHeight / store.state.originalWidth) * 1123;
                 if(newHeight > 796){
-                    console.log("es mayor");
                     imageStyle = {
                         width: (796 * store.state.originalWidth) / store.state.originalHeight,
                         margin: 0,
