@@ -11,10 +11,8 @@ const initialState = {
     }
 };
 
-export const imageProcessorReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case types.imageUpload:
-            console.log("entra", action);
+export const imageProcessorReducer = (state = initialState, action = {}) => {
+    if(action.type === types.imageUpload) {
             return {
                 state: {
                     image: action.state.image,
@@ -25,7 +23,7 @@ export const imageProcessorReducer = (state = initialState, action) => {
                     ratio: action.state.ratio
                 },
             };
-        default:
-            return state;
+    }else{
+        return state;
     }
 };

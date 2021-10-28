@@ -19,7 +19,6 @@ const UploadImage = (props) => {
             };
 
             img.src = src;
-            //this.setState({srcImage: src, status: 'loaded'});
         }
     }
 
@@ -33,7 +32,7 @@ const UploadImage = (props) => {
 
     const calculateRatio = (height, width) => {
         return width+' : '+height;
-    } 
+    }
 
     return (
             <div style={{width: "796px", display: "inline-block"}} className="custom-file">

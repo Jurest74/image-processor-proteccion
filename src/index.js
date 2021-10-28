@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import PrincipalPage from './page/principal.page.jsx';
+import PrincipalPage from './page/principalPage.jsx';
 import {store} from './redux/store';
 import { Provider } from 'react-redux';
 

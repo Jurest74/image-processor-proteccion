@@ -17,32 +17,34 @@ const A4Sheet = (props) => {
     display: "inline-block",
     margin: "3%"}});
 
-    const store = useSelector(store => store);
+    const globalStore = useSelector(store => store);
 
-    if(AdjustImage && store.state.status === 'loaded'){
+    const {originalHeight, originalWidth, status, orientation, image} = globalStore.state;
 
-        if(store.state.originalHeight > 1123 || store.state.originalWidth > 796){
-            if(store.state.orientation === 'vertical'){
+    if(AdjustImage && status === 'loaded'){
+
+        if(originalHeight > 1123 || originalWidth > 796){
+            if(orientation === 'vertical'){
                 imageStyle = {
                     maxHeight: "1123px",
                     MaxWidth: "796px",
-                    height: (store.state.originalHeight / store.state.originalWidth) * 796,
+                    height: (originalHeight / originalWidth) * 796,
                     margin: 0,
                     padding: 0,
                     float: "left"
                 };
             }else{
-                let newHeight = (store.state.originalHeight / store.state.originalWidth) * 1123;
+                let newHeight = (originalHeight / originalWidth) * 1123;
                 if(newHeight > 796){
                     imageStyle = {
-                        width: (796 * store.state.originalWidth) / store.state.originalHeight,
+                        width: (796 * originalWidth) / originalHeight,
                         margin: 0,
                         padding: 0,
                         float: "left"
                     };
                 }else{
                     imageStyle = {
-                        height: (store.state.originalHeight / store.state.originalWidth) * 1123,
+                        height: (originalHeight / originalWidth) * 1123,
                         margin: 0,
                         padding: 0,
                         float: "left"
@@ -68,7 +70,7 @@ const A4Sheet = (props) => {
             margin: "3%"
         }
 
-        if(store.state.orientation === 'vertical'){
+        if(orientation === 'vertical'){
             A4Style.height = "1123px";
             A4Style.width = "796px";
         }else{
@@ -77,11 +79,11 @@ const A4Sheet = (props) => {
         }
 
         setCurrent({state: A4Style});
-    }, [store.state.orientation]);
+    }, [orientation]);
 
     return (
         <div style={current.state}>
-                <img style={imageStyle} src={store.state.image} className="rounded" alt="" />
+                <img style={imageStyle} src={image} className="rounded" alt="" />
         </div>
     )
 }
