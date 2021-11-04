@@ -4,9 +4,10 @@ import {newImageUploaded} from '../redux/actions'
 
 const UploadImage = (props) => {
 
-    const dispatch = useDispatch()
-
+    const dispatch = useDispatch();
+    const {restoreImagePosition} = props;
     const onImageChange = (event) => {
+        restoreImagePosition(false, '');
         if (event.target.files && event.target.files[0]) {
             const img = new Image();
             const src = URL.createObjectURL(event.target.files[0]);
@@ -31,11 +32,11 @@ const UploadImage = (props) => {
     }
 
     const calculateRatio = (height, width) => {
-        return width+' : '+height;
+        return (width / height).toFixed(1);
     }
 
     return (
-            <div style={{width: "796px", display: "inline-block"}} className="custom-file">
+            <div style={{width: "55%"}} className="custom-file">
                 <input type="file" className="custom-file-input" id="customFile" onChange={onImageChange}/>
                 <label className="custom-file-label" for="customFile">Carga una imagen</label>
             </div>

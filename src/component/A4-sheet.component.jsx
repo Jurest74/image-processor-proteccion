@@ -83,7 +83,7 @@ const A4Sheet = (props) => {
 
     return (
         <div style={current.state}>
-                <img style={imageStyle} src={image} className="rounded" alt="" />
+                <img style={imageStyle} src={image} alt="" />
         </div>
     )
 }

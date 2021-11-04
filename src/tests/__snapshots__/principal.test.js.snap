@@ -1,0 +1,129 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`pruebas en A4Sheet component render A4Sheet component 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "display": "inline-block",
+      "height": "1123px",
+      "margin": "3%",
+      "width": "796px",
+    }
+  }
+>
+  <img
+    alt=""
+    src={null}
+    style={
+      Object {
+        "left": "5%",
+        "position": "absolute",
+        "top": "30%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`pruebas en A4Sheet page render A4Sheet Page 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "display": "inline-block",
+      "height": "1123px",
+      "margin": "3%",
+      "width": "796px",
+    }
+  }
+>
+  <img
+    alt=""
+    src={null}
+    style={
+      Object {
+        "left": "5%",
+        "position": "absolute",
+        "top": "30%",
+      }
+    }
+  />
+</div>
+`;
+
+exports[`pruebas en UploadImage component render UploadImage component 1`] = `
+<div
+  className="custom-file"
+  style={
+    Object {
+      "display": "inline-block",
+      "width": "796px",
+    }
+  }
+>
+  <input
+    className="custom-file-input"
+    id="customFile"
+    onChange={[Function]}
+    type="file"
+  />
+  <label
+    className="custom-file-label"
+    for="customFile"
+  >
+    Carga una imagen
+  </label>
+</div>
+`;
+
+exports[`pruebas en UploadImage page render A4Sheet Page 1`] = `
+<div
+  className="custom-file"
+  style={
+    Object {
+      "display": "inline-block",
+      "width": "796px",
+    }
+  }
+>
+  <input
+    className="custom-file-input"
+    id="customFile"
+    onChange={[Function]}
+    type="file"
+  />
+  <label
+    className="custom-file-label"
+    for="customFile"
+  >
+    Carga una imagen
+  </label>
+</div>
+`;
+
+exports[`pruebas en principal page render principal Page 1`] = `
+<div
+  style={
+    Object {
+      "backgroundColor": "white",
+      "display": "inline-block",
+      "height": "1123px",
+      "margin": "3%",
+      "width": "796px",
+    }
+  }
+>
+  <img
+    alt=""
+    src={null}
+    style={
+      Object {
+        "left": "5%",
+        "position": "absolute",
+        "top": "30%",
+      }
+    }
+  />
+</div>
+`;

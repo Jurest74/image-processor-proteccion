@@ -20,7 +20,7 @@ export const imageProcessorReducer = (state = initialState, action = {}) => {
                     originalHeight: action.state.originalHeight,
                     originalWidth: action.state.originalWidth,
                     orientation: action.state.orientation,
-                    ratio: action.state.ratio
+                    ratio: action.state.ratio,
                 },
             };
     }else{

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ToastContainer} from 'react-toastify';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import PrincipalPage from './page/principalPage.jsx';
@@ -10,6 +11,7 @@ ReactDOM.render(
 <React.StrictMode>
   <Provider store={store}>
     <div>
+    <ToastContainer />
       <PrincipalPage />
       </div>
   </Provider>
