@@ -28,7 +28,7 @@ const PrincipalPage = (props) => {
 
         return(
             <div style={{color: "white"}} className="App full-window">
-                <h3>Image proccesor Protección S.A</h3>
+                <h3>Procesador de imagenes - Protección S.A</h3>
                 <hr style={{border: "0.3px solid white", width: "55%"}}></hr>
                 <UploadImage restoreImagePosition={AdjustImage}/>
                 <div className="row" style={{textAlign: "left", margin: "auto", marginBottom: "-25px", marginTop: "10px" ,padding: "10px", width: "58%"}}>
